@@ -39,6 +39,7 @@ EMAILNAME="$1" #Turn argument into a variable
 cat $RUNPATH/header > $RUNPATH/upload.json
 #Hit the haveibeenpwned api for results
 curl 'https://haveibeenpwned.com/api/v2/breachedaccount/'"$EMAILNAME" | jq '.' > $RUNPATH/raw.json
+[ -s $RUNPATH/raw.json ] || die "No results for $EMAILNAME" #Tests to make sure results were received.
 #display results
 echo "Pwned email:"
 echo $EMAILNAME

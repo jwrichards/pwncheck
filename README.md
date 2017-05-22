@@ -4,5 +4,6 @@ Mucking about with the API for `;-- and CouchDB for fun and profit.
 
 Usage:
 pwned [email].
-If you don't provide an address, you'll be prompted for one but I'm probably going to remove that to reduce interactivity.
+Removed the interactive prompt if you don't provide an email - instead it will die with an error message with the proper usage outlined.
 
+Currently requires couchDB to be up and running and will fail with errors if it can't detect or create a local database.
